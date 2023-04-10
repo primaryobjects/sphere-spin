@@ -7,6 +7,10 @@ Match the colored sphere!
 
 [Play Online](https://replit.com/@primaryobjects/sphere-spin?v=1)
 
+## Screenshots
+
+![Sphere Spin](images/screenshot.gif)
+
 ## How to Play
 
 The goal of the game is to match your colored sphere with the goal sphere.
@@ -25,10 +29,6 @@ Each action rotates the qubit accordingly. As your qubit rotates, the color will
 When your sphere matches the same measurement outcome, and color, of the goal sphere you advance to the next round!
 
 *How many rounds can you win?*
-
-## Screenshots
-
-![Sphere Spin](images/screenshot.gif)
 
 ## License
 
