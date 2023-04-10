@@ -213,13 +213,14 @@ def handle_mouse_event(event):
         rotate_x_up()
 
 def handle_key_event(event):
-    if event.key == pygame.K_UP:
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_UP]:
         increase_probability()
-    elif event.key == pygame.K_DOWN:
+    elif keys[pygame.K_DOWN]:
         decrease_probability()
-    elif event.key == pygame.K_RIGHT:
+    elif keys[pygame.K_RIGHT]:
         rotate_x_up()
-    elif event.key == pygame.K_LEFT:
+    elif keys[pygame.K_LEFT]:
         rotate_x_down()
 
 def increase_probability():
@@ -252,21 +253,21 @@ while not done:
             done = True
         elif event.type == pygame.MOUSEBUTTONDOWN:
             handle_mouse_event(event)
-        elif event.type == pygame.KEYDOWN:
-            handle_key_event(event)
 
-        if is_win:
-            for frame in range(100):
-                draw_firework(screen, (random() * 255, random() * 255, random() * 255), frame)
-                pygame.display.flip()
-                pygame.time.wait(10)
+    handle_key_event(None)
 
-            # Update the player's score
-            score += 1
+    if is_win:
+        for frame in range(100):
+            draw_firework(screen, (random() * 255, random() * 255, random() * 255), frame)
+            pygame.display.flip()
+            pygame.time.wait(10)
 
-            # Update score color.
-            score_color = (random() * 255, random() * 255, random() * 255)
-            draw()
+        # Update the player's score
+        score += 1
+
+        # Update score color.
+        score_color = (random() * 255, random() * 255, random() * 255)
+        draw()
 
 # Quit Pygame
 pygame.quit()
